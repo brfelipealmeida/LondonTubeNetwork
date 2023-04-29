@@ -1,0 +1,144 @@
+%-------------------------------------------------------------------------------
+% TEMPLATE FOR UCL MSc THESES
+% (c) Sofia Feist, 2020
+
+% This is a template for a MSc Thesis document, based on a Microsoft Word template given 
+% by the Bartlett faculty. 
+%------------------------------------------------------------------------------- 
+
+
+
+
+
+% ------------------ DOCUMENT SETUP ------------------ 
+% The document class defines the document type (report) and sets the font size (10pt)
+\documentclass[10pt]{report}
+\author{the author}
+
+% Inputs the Document Packages
+\input{_Packages}
+
+% Controls how many subsections the document can take
+%  and how many of those will get put into the contents pages.
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+% Line Spacing
+\setstretch{1.0}
+
+% The folder path where the images will be uploaded
+\graphicspath{{./Images/}} 
+
+% Places a dot after Chapter/Section/Subsection number in Table of Contents
+\renewcommand{\cftchapaftersnum}{.}
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+
+%  Customize Dot spacing in Table of Contents/List of Figures/Tables
+\renewcommand{\cftdotsep}{0.3}
+
+% Numeration Type for Chapters and Sections (Roman I, II, II / Arabic 1, 2, 3)
+\renewcommand\thechapter{\Roman{chapter}}
+\renewcommand\thesection{\arabic{section}}
+
+% Line Break Properties
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+
+% Formatting Table of Contents/Lists titles
+\renewcommand{\contentsname}{\normalfont\bfseries\LARGE{CONTENTS}}
+\renewcommand{\listfigurename}{\normalfont\bfseries\LARGE{LIST OF FIGURES}}
+\renewcommand{\listtablename}{\normalfont\bfseries\LARGE{LIST OF TABLES}}
+
+
+% Title Formatting customization
+\titleformat{\chapter}{\normalfont\bfseries\LARGE}{\thechapter.}{1em}{\MakeUppercase}
+
+\titleformat{\section}{\normalfont\bfseries\large}{\thesection.}{1em}{\MakeUppercase}
+\titlespacing*{\section} {0pt} {0pt} {15pt} % left, before, after
+
+\titleformat{\subsection}{\normalfont\bfseries\large}{\thesubsection.}{1em}{}
+\titlespacing*{\subsection} {0pt} {10pt} {10pt}
+
+\titleformat{\subsubsection}{\normalfont\bfseries\large}{}{1em}{}
+\titlespacing*{\subsubsection} {0pt} {10pt} {10pt}
+
+
+% HEADER AND FOOTER
+\pagestyle{fancy}  % Set Page Style (Header and Footer Style)
+\fancyhf{}  % Clears the header and footer (from the default info)
+
+% Header
+\renewcommand{\headrulewidth}{0pt}  % Removes the default Horizontal Line in Header
+\fancyhead[L]{SN21125032}
+\fancyhead[R]{March 2023}
+
+% Footer
+\fancyfoot[C]{\thepage} % Page Number
+
+% Change figure numbering per section
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+
+
+
+
+
+%  -------------------------------------------------
+%  --------- The document starts from here --------- 
+%  -------------------------------------------------
+
+\begin{document}
+
+% -------------------  INTRODUCTION  ---------------------
+\begin{introduction}
+\begin{center}
+    % UCL IMAGE
+    \vspace*{-3cm}
+    \makebox[\textwidth]{\includegraphics[width=\paperwidth]{Image/UCL_LOGO_new.png}}
+\end{center}   
+    % Title
+    {\LARGE\textbf{Public Policy\\
+    % Subtitle
+    New York\\}}
+    
+
+\section{Part 1: London’s underground resilience}
+
+\subsection{New Subsection} 
+
+
+a) Select and describe one example of a social or economic challenge – related
+to new technology – that is set out in the initiative.
+
+
+b) In what ways and to which
+extent do you think the strategy addresses this challenge? Discuss strengths
+and limitations, including gaps in the strategy
+
+New York City 
+
+\newpage
+\section{New Section}
+\subsection{Lorem}
+
+\newpage
+\section{Conclusion}
+\subsection{Future Work}
+
+
+
+% -------------------  BIBLIOGRAPHY ---------------------
+\newpage
+\printbibliography[title = {References}]
+\addcontentsline{toc}{chapter}{References} % Adds References Section to Table of Contents
+
+
+\end{document}
+%  -------------------------------------------------
+%  --------- The document ends from here ----------- 
+%  -------------------------------------------------
