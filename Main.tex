@@ -104,11 +104,11 @@
  \subsection{Topological Network}
 \subsubsection{Centrality Measures } 
         
-         Aiming to evaluate the resilience of the Tube Network and the impact of node removals, the three centralities measures chosen to identify the most important nodes in the Tube Network are Degree, Eigenvector, and Betweenness centrality.
+         Aiming to evaluate the resilience of the Tube Network and the impact of node removals, the three centralities measures chosen to identify the most important nodes in the Tube Network are Degree, Eigenvector, and Betweenness centrality. In the first experiment of this analysis was also considered to use closeness centrality. However, the application in the context of nodes removal this centrality measure not presented good results.  
         
         \vspace{5mm} %5mm vertical space
         
-        \textbf{Degree Centrality:} The number of links associated with a node related to the tube network. This centrality reflects the number of connections with a station, which can be linked with another station or tube line that starts and finish in the same station, as a loop, for example. 
+        \textbf{Degree Centrality:} The number of links associated with a node related to the tube network. This centrality reflects the number of connections with a station, which can be linked with another station or tube line that starts and finish in the same station, as a loop, for example. Regarding this analysis, the degree centrality values are normalised by dividing them by the maximum possible degree, which is n-1. 
 
     \begin{figure}[htp]
         \centering
@@ -121,7 +121,9 @@
         
   \vspace{5mm} %5mm vertical space
         
-        \textbf{Eigenvector centrality:}  the shortest path to all nodes in the system
+        \textbf{Eigenvector centrality:}  The transitive influence of nodes. Eigenvector centrality measures the influence of a node in a network based on a relative score for all nodes. Thus, nodes with a high-score mean that these nodes are also connected to other nodes with a high score. For tube network, these measure is useful because it is possible to understand the influence of a tube station not only focused on its good connectivity with a  range of tube lines. This centrality allows us to understand how good is the connectivity of the neighbour's stations. Therefore, when it is considered a station disruption, an individual close to other stations is well-connected to improve the user experience in the system. 
+
+        
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Part1_topologicalmap_eigenvector.png}
@@ -131,7 +133,7 @@
 
    \vspace{5mm} %5mm vertical space
    
-        \textbf{Betweenness centrality:} the shortest path passing through a node
+        \textbf{Betweenness centrality:} the shortest path passing through a node.
         
     \begin{figure}[htp]
         \centering
@@ -222,16 +224,22 @@ lorem
 
 \subsection{Models and calibration}
 
+
+
+
+
+
+
     \begin{figure}[htp]
         \centering
-        \includegraphics[width=14cm]{Image/Part2_OD.png}
+        \includegraphics[width=16cm]{Image/Part2_OD.png}
         \caption{Table}
         \label{fig:galaxy}
     \end{figure}
 
     \begin{figure}[htp]
         \centering
-        \includegraphics[width=14cm]{Image/Part2_OD2.png}
+        \includegraphics[width=16cm]{Image/Part2_OD2.png}
         \caption{Table}
         \label{fig:galaxy}
     \end{figure}
@@ -242,14 +250,14 @@ lorem
 
     \begin{figure}[htp]
         \centering
-        \includegraphics[width=14cm]{Image/Part2_OD3_scenario A.png}
+        \includegraphics[width=16cm]{Image/Part2_OD3_scenario A.png}
         \caption{Table}
         \label{fig:galaxy}
     \end{figure}
 
     \begin{figure}[htp]
         \centering
-        \includegraphics[width=14cm]{Image/Part2_OD4_scenario A.png}
+        \includegraphics[width=16cm]{Image/Part2_OD4_scenario A.png}
         \caption{Table}
         \label{fig:galaxy}
     \end{figure}
@@ -261,14 +269,14 @@ lorem
 \textbf{Measure 1}
     \begin{figure}[htp]
         \centering
-        \includegraphics[width=14cm]{Image/Part2_OD5_scenario B.png}
+        \includegraphics[width=16cm]{Image/Part2_OD5_scenario B.png}
         \caption{Table}
         \label{fig:galaxy}
     \end{figure}
 
     \begin{figure}[htp]
         \centering
-        \includegraphics[width=14cm]{Image/Part2_OD6_scenario B.png}
+        \includegraphics[width=16cm]{Image/Part2_OD6_scenario B.png}
         \caption{Table}
         \label{fig:galaxy}
     \end{figure}
@@ -276,14 +284,14 @@ lorem
 \textbf{Measure 2}    
     \begin{figure}[htp]
         \centering
-        \includegraphics[width=14cm]{Image/Part2_OD7_scenario B.png}
+        \includegraphics[width=16cm]{Image/Part2_OD7_scenario B.png}
         \caption{Table}
         \label{fig:galaxy}
     \end{figure}
 
     \begin{figure}[htp]
         \centering
-        \includegraphics[width=14cm]{Image/Part2_OD8_scenario B.png}
+        \includegraphics[width=16cm]{Image/Part2_OD8_scenario B.png}
         \caption{Table}
         \label{fig:galaxy}
     \end{figure}
