@@ -104,7 +104,7 @@
  \subsection{Topological Network}
 \subsubsection{Centrality Measures } 
         
-         Aiming to evaluate the resilience of the Tube Network and the impact of node removals, the three centralities measures chosen to identify the most important nodes in the Tube Network are Degree, Eigenvector, and Betweenness centrality. In the first experiment of this analysis was also considered to use closeness centrality. However, the application in the context of nodes removal this centrality measure not presented good results.  
+         Aiming to evaluate the resilience of the Tube Network and the impact of node removals, the three centralities measures chosen to identify the most important nodes in the Tube Network are Degree, Eigenvector, and Betweenness centrality. The first experiment of this analysis was also considered to use closeness centrality. However, the application in the context of node removal in this centrality measures has not presented good results.  
         
         \vspace{5mm} %5mm vertical space
         
@@ -112,36 +112,46 @@
 
     \begin{figure}[htp]
         \centering
-        \includegraphics[width=14cm]{Image/Part1_topologicalmap_degree.png}
+        \includegraphics[width=12cm]{Image/Part1_topologicalmap_degree.png}
         \caption{Topological Tube network map - Degree centrality}
-        \label{fig:galaxy}
+        \label{fig:Part1_topologicalmap_degree}
     \end{figure}   
 
 
         
-  \vspace{5mm} %5mm vertical space
+\newpage  
         
         \textbf{Eigenvector centrality:}  The transitive influence of nodes. Eigenvector centrality measures the influence of a node in a network based on a relative score for all nodes. Thus, nodes with a high-score mean that these nodes are also connected to other nodes with a high score. For tube network, these measure is useful because it is possible to understand the influence of a tube station not only focused on its good connectivity with a  range of tube lines. This centrality allows us to understand how good is the connectivity of the neighbour's stations. Therefore, when it is considered a station disruption, an individual close to other stations is well-connected to improve the user experience in the system. 
+
+    \vspace{5mm} %5mm vertical space    
+        
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[width=5cm]{Image/eigenvector equation.jpeg}
+        \caption{Eigenvector centrality - Equation}
+        \label{fig:eigenvector equation}
+    \end{figure} 
 
         
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Part1_topologicalmap_eigenvector.png}
         \caption{Topological Tube network map - Eigenvector centrality}
-        \label{fig:galaxy}
+        \label{fig:Part1_topologicalmap_eigenvector}
     \end{figure} 
 
-   \vspace{5mm} %5mm vertical space
-   
+  
+\newpage   
         \textbf{Betweenness centrality:} the shortest path passing through a node.
         
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Part1_topologicalmap_betweenness.png}
         \caption{Topological Tube network map - Betweenness centrality}
-        \label{fig:galaxy}
+        \label{fig:Part1_topologicalmap_betweenness}
     \end{figure} 
 
+  \vspace{5mm} %5mm vertical space
 
     To summarise,     
 
@@ -149,7 +159,7 @@
         \centering
         \includegraphics[width=14cm]{Image/Table_CentralitiesMeasures.png}
         \caption{Centrality measures}
-        \label{fig:galaxy}
+        \label{fig:Table_CentralitiesMeasures}
     \end{figure}
 
 \newpage    
@@ -160,11 +170,14 @@ In order to evaluate the topological network and use this measure to evaluate th
 
 \subsubsection{Node Removal} 
 
+In order to measure the impact of nodes removal in sequential and non-sequential order, a was developed a loop through values of n from 0 to 10 and then stored the results of the number of nodes removed, the impact measures, the total o nodes and consequently, which station was removed from the system. Thus, this process was applied to the three centrality measures and merged into a unique dataset. Therefore, it is possible to analyse the impact of node removal in the graphs below ( Figure \ref{fig:Part1_nonsequential_Summarise}). 
+
+
     \begin{figure}[htp]
         \centering
         \includegraphics[width=16cm]{Image/Part1_nonsequential_Summarise.png}
         \caption{Non-sequential node removal}
-        \label{fig:galaxy}
+        \label{fig:Part1_nonsequential_Summarise}
     \end{figure}
 
 
@@ -172,7 +185,7 @@ In order to evaluate the topological network and use this measure to evaluate th
         \centering
         \includegraphics[width=16cm]{Image/Part1_sequential_Summarise.png}
         \caption{Sequential node removal}
-        \label{fig:galaxy}
+        \label{fig:Part1_sequential_Summarise}
     \end{figure}
 
 
@@ -186,7 +199,7 @@ In order to evaluate the topological network and use this measure to evaluate th
         \centering
         \includegraphics[width=14cm]{Image/Table_CentralitiesMeasures_Flows.png}
         \caption{Flows - Centrality measures}
-        \label{fig:galaxy}
+        \label{fig:Table_CentralitiesMeasures_Flows}
     \end{figure}
 
 
@@ -199,14 +212,14 @@ lorem
         \centering
         \includegraphics[width=14cm]{Image/Table_Flows_degree.png}
         \caption{Flows - Centrality measures}
-        \label{fig:galaxy}
+        \label{fig:Table_Flows_degree}
     \end{figure}
 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Table_Flows_eigenvector.png}
         \caption{Flows - Centrality measures}
-        \label{fig:galaxy}
+        \label{fig:Table_Flows_eigenvector}
     \end{figure}
 
 
@@ -214,7 +227,7 @@ lorem
         \centering
         \includegraphics[width=14cm]{Image/Table_Flows_Betweenness.png}
         \caption{Flows - Centrality measures}
-        \label{fig:galaxy}
+        \label{fig:Table_Flows_Betweenness}
     \end{figure}
 
 \newpage
@@ -234,14 +247,14 @@ lorem
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD.png}
         \caption{Table}
-        \label{fig:galaxy}
+        \label{fig:Part2_OD}
     \end{figure}
 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD2.png}
         \caption{Table}
-        \label{fig:galaxy}
+        \label{fig:Part2_OD2}
     \end{figure}
 
 \newpage    
@@ -252,14 +265,14 @@ lorem
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD3_scenario A.png}
         \caption{Table}
-        \label{fig:galaxy}
+        \label{fig:Part2_OD3_scenario A}
     \end{figure}
 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD4_scenario A.png}
         \caption{Table}
-        \label{fig:galaxy}
+        \label{fig:Part2_OD4_scenario A}
     \end{figure}
 
 \newpage    
@@ -271,14 +284,14 @@ lorem
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD5_scenario B.png}
         \caption{Table}
-        \label{fig:galaxy}
+        \label{fig:Part2_OD5_scenario B}
     \end{figure}
 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD6_scenario B.png}
         \caption{Table}
-        \label{fig:galaxy}
+        \label{fig:Part2_OD6_scenario B}
     \end{figure}
 
 \textbf{Measure 2}    
@@ -286,14 +299,14 @@ lorem
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD7_scenario B.png}
         \caption{Table}
-        \label{fig:galaxy}
+        \label{fig:Part2_OD7_scenario B}
     \end{figure}
 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD8_scenario B.png}
         \caption{Table}
-        \label{fig:galaxy}
+        \label{fig:Part2_OD8_scenario B}
     \end{figure}
 
 \newpage    
