@@ -215,58 +215,102 @@ The weighted network outcomes performed a different ranking behaviour, mainly fo
 
 For this analysis, it will remain the number of component and size largest components, in addition to the Flows of the largest component. Aiming to understand the impact in the flows, removing a tube station. 
 
+\newpage 
+
 \subsubsection{Node Removal} 
+
+The Degree centrality ranking, the measure number of components and the size largest component did not have different values. However, the flows of the largest component presented crucial information about the importance of removed stations in the networking flows(Figure \ref{fig:Table_Flows_degree}). 
 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Table_Flows_degree.png}
-        \caption{Flows - Centrality measures}
+        \caption{Weighted Network - Degree Centrality}
         \label{fig:Table_Flows_degree}
     \end{figure}
+
+For eigenvector centrality, Stratford station caused one of the highest impacts on the flow in the network, removing a considerable amount of flow in addition to separating the network into three components( Figure \ref{fig:Table_Flows_eigenvector}).
 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Table_Flows_eigenvector.png}
-        \caption{Flows - Centrality measures}
+        \caption{Weighted Network - Eigenvector Centrality}
         \label{fig:Table_Flows_eigenvector}
     \end{figure}
 
-
+On the other hand, Betweenness Centrality showed a different outcome(Figure \ref{fig:Table_Flows_Betweenness}). 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Table_Flows_Betweenness.png}
-        \caption{Flows - Centrality measures}
+        \caption{Weighted Network - Betweenness Centrality}
         \label{fig:Table_Flows_Betweenness}
     \end{figure}
 
-\newpage
+Overall, 
+
+\newpage 
 
 \section{ Part 2: Spatial Interaction models}
 
-
 \subsection{Models and calibration}
 
+Gravity Model( Unconstrained model), and the constrained models( Production-constrained Model, Attraction-Constrained Model and Doubly Constrained model)
+
+\vspace{5mm} %5mm vertical space
+
+\textbf{- Gravity model:}
+The gravity model assume the flows between the origin and destination are proportional to the mass of the origin and destination and inversely proportional to the distance between them. That means if distance decreases, the flow increase and if flows decrease, the origin and destination mass decrease.
+
+\begin{equation} \tag{1}
+T_{ij} = k O_i^\alpha  D_j^\gamma  d_{ij}^{-\beta}
+\end{equation}
+
+\vspace{5mm} %5mm vertical space
+
+\textbf{- Production-Constrained Model:}
 
 
 
+\begin{equation} \label{eq:1} \tag{2}
+T_{ij} = A_i O_i D_j^\gamma d_{ij}^{-\beta}
+\end{equation}
 
+\vspace{5mm} %5mm vertical space
 
+\textbf{- Attraction-Constrained Model}
+
+\begin{equation} \label{eq:5} \tag{3}
+T_ij = D_j B_j O_i^\alpha d_{ij}^{-\beta}
+\end{equation}
+
+\vspace{5mm} %5mm vertical space
+\textbf{- Doubly Constrained Model}
+ In the doubly constrained model is only considered the flows. However, first,t it is crucial to detect a good beta. Thus, the beta is used to calculate the new origin and destination flows. Beta values do not change unless the mode of transport changes. 
+
+\begin{equation} \tag{4}
+T_{ij} = A_i B_j O_i D_j d_{ij}^{-\beta}
+\end{equation}
+
+\vspace{5mm} %5mm vertical space
+
+Thus, the Production-constrained model was selected to analyse London's tube network. 
 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD.png}
-        \caption{Table}
-        \label{fig:Part2_OD}
+        \caption{Model before calibration}
+        \label{fig: Model before calibration}
     \end{figure}
+
+In order to build the Production-constrained model, the following variables were applied in the equation: Flows, Jobs, Population and Distance as the cost. 
 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD2.png}
-        \caption{Table}
-        \label{fig:Part2_OD2}
+        \caption{Model after calibration}
+        \label{fig: Model after calibration}
     \end{figure}
 
-\newpage    
+   
 \subsection{Scenarios}
 \subsubsection{Scenario A}
 
