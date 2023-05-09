@@ -125,7 +125,7 @@ The number of links associated with a node related to the tube network(Figure \r
         
 \newpage  
         
-        \textbf{Eigenvector centrality:}  The transitive influence of nodes(Figure \ref{fig:Part1_topologicalmap_eigenvector}). Eigenvector centrality measures the influence of a node in a network based on a relative score for all nodes. Thus, nodes with a high-score mean that these nodes are also connected to other nodes with a high score. For tube network, these measure is useful because it is possible to understand the influence of a tube station not only focused on its good connectivity with a  range of tube lines. This centrality allows us to understand how good is the connectivity of the neighbour's stations. Therefore, when it is considered a station disruption, an individual close to other stations is well-connected to improve the user experience in the system. 
+        \textbf{Eigenvector centrality:}  The transitive influence of nodes(Figure \ref{fig:Part1_topologicalmap_eigenvector}). Eigenvector centrality measures the influence of a node in a network based on a relative score for all nodes. Thus, nodes with a high-score mean that these nodes are also connected to other nodes with a high score\cite{networkx_centrality_2023}. For tube network, these measure is useful because it is possible to understand the influence of a tube station not only focused on its good connectivity with a  range of tube lines. This centrality allows us to understand how good is the connectivity of the neighbour's stations. Therefore, when it is considered a station disruption, a user who is close to other tube stations that are also well connected to the system allows that user to access the transport system without adding large displacements.
 
     \vspace{5mm} %5mm vertical space    
         
@@ -146,7 +146,7 @@ The number of links associated with a node related to the tube network(Figure \r
 
   
 \newpage   
-        \textbf{Betweenness centrality:} The shortest path passing through a node( Figure \ref{fig:Part1_topologicalmap_betweenness}). It is possible to detect the level of influence a node has on the flow of information. Thus, it can find the nodes that bridge a different part of the network. Related to the tube network, this measure is an essential outcome for understanding which tube station has the characteristic to allow users to commute easily and fast into the system.
+        \textbf{Betweenness centrality:} The shortest path passing through a node( Figure \ref{fig:Part1_topologicalmap_betweenness}). It is possible to detect the level of influence a node has on the flow of information\cite{arcaute_review_2022}. Thus, it can find the nodes that serve as bridges for a different part of the network. Related to the tube network, this measure is an essential outcome for understanding which tube station has the characteristic to allow users to commute easily and fast into the system.
         
         To calculate the betweenness centrality of a node is the sum of all shortest paths that pass through the vertex, where 
                     
@@ -264,7 +264,7 @@ Gravity Model( Unconstrained model), and the constrained models( Production-cons
 \vspace{5mm} %5mm vertical space
 
 \textbf{- Gravity model:}
-The gravity model assumes the flows between the origin and destination are proportional to the mass of the origin and destination and inversely proportional to the distance between them. That means if the distance decreases, the flow increase and if the flows decrease, the origin and destination mass decrease.
+The gravity model assumes the flows between the origin and destination are proportional to the mass of the origin and destination and inversely proportional to the distance between them. That means if the distance decreases, the flow increase and if the flows decrease, the origin and destination mass decrease\cite{wilson_family_1971, senior_gravity_1979}.
 
 \begin{equation} \tag{1}
 T_{ij} = k O_i^\alpha  D_j^\gamma  d_{ij}^{-\beta}
@@ -278,7 +278,7 @@ In unconstrained models, the constant K is employed to ensure the inclusion of a
 
 \textbf{- Production-Constrained Model:}
 
-The Production(origin) Constrained Spatial Interaction Model is a powerful framework for understanding how origins behave and commute within a city to reach points of interest. These estimated flows can be connected to different variables related to these attractive points, such as budget and store size. In the context of London's tube network, the flows can be estimated using the equation below, which incorporates the logarithm of job values and the distance(cost).
+The Production(origin) Constrained Spatial Interaction Model is a powerful framework for understanding how origins behave and commute within a city to reach points of interest. These estimated flows can be connected to different variables related to these attractive points, such as budget and store size. In the context of London's tube network, the flows can be estimated using the equation below, which incorporates the logarithm of job values and the distance(cost)\cite{pooler_extended_1994}.
 
 \begin{equation} \label{eq:1} \tag{2}
 T_{ij} = A_i O_i D_j^\gamma d_{ij}^{-\beta}
@@ -288,7 +288,7 @@ T_{ij} = A_i O_i D_j^\gamma d_{ij}^{-\beta}
 
 \textbf{- Attraction-Constrained Model}
 
-The Attraction(destination) Constrained model plays a crucial role in assessing the impact of a significant increase in demand within a specific region, such as establishing a new university or creating many job opportunities. By applying the value of this increase to the model, we can estimate how this new pattern will affect commuting flows and gain insights into the origins of these flows towards the destination. When applied to the tube network, the model considers the logarithm values of population, distance (cost), and destination stations,  resulting and the relationship of all these values with the flows in the system.
+The Attraction(destination) Constrained model plays a crucial role in assessing the impact of a significant increase in demand within a specific region, such as establishing a new university or creating many job opportunities. By applying the value of this increase to the model, we can estimate how this new pattern will affect commuting flows and gain insights into the origins of these flows towards the destination. When applied to the tube network, the model considers the logarithm values of population, distance (cost), and destination stations,  resulting and the relationship of all these values with the flows in the system\cite{pooler_extended_1994}.
 
 
 \begin{equation} \label{eq:5} \tag{3}
@@ -305,9 +305,9 @@ T_{ij} = A_i B_j O_i D_j d_{ij}^{-\beta}
 
 \newpage 
 
-Thus, the Production-constrained model was selected to analyse London's tube network. In order to determine the most suitable model, both the attraction-constrained and production-constrained models were tested to address the specific scenarios involving a 50\% reduction in jobs in Canary Wharf and an increase in transportation costs. While the attraction-constrained model is primarily concerned with the demand generation for a destination like work in Canary Wharf, it was found that the production-constrained model produced a higher R-squared value and could be validated for both scenarios(Figure \ref{fig: Model before calibration}, Figure\ref{fig: Model after calibration}, and Table \ref{table: calibration}).
+Thus, the Production-constrained model was selected to analyse London's tube network. In order to determine the most suitable model, both the attraction-constrained and production-constrained models were tested to address the specific scenarios involving a 50\% reduction in jobs in Canary Wharf and an increase in transportation costs\cite{flowerdew_fitting_2010}. While the attraction-constrained model is primarily concerned with the demand generation for a destination like work in Canary Wharf, it was found that the production-constrained model produced a higher R-squared value and could be validated for both scenarios(Figure \ref{fig: Model before calibration}, Figure\ref{fig: Model after calibration}, and Table \ref{table: calibration}).
 
-In the context of the Production-constrained model, even though it is primarily associated with the origin of flows, such as the tube stations, the reduction in job opportunities in Canary Wharf necessitates the redistribution of flows from these areas to other city regions. Therefore, this model becomes essential for understanding the new dynamics of flow origins and reallocating attraction flows towards available job opportunities.
+In the context of the Production-constrained model\cite{pooler_extended_1994}, even though it is primarily associated with the origin of flows, such as the tube stations, the reduction in job opportunities in Canary Wharf necessitates the redistribution of flows from these areas to other city regions. Therefore, this model becomes essential for understanding the new dynamics of flow origins and reallocating attraction flows towards available job opportunities.
 
     \begin{figure}[htp]
         \centering
@@ -316,7 +316,7 @@ In the context of the Production-constrained model, even though it is primarily 
         \label{fig: Model before calibration}
     \end{figure}
 
-In order to build the Production-constrained model, the following variables were applied in the equation: Flows, Jobs, Population and Distance as the cost. 
+In order to build the Production-constrained model, the following variables were applied in the equation: Flows, Jobs, Population and Distance as the cost\cite{neira_working_2022}. 
 
     \begin{figure}[htp]
         \centering
