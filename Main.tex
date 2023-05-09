@@ -76,7 +76,7 @@
 
 
 
-
+ \captionsetup{justification=centering}
 
 
 %  -------------------------------------------------
@@ -295,15 +295,17 @@ T_ij = D_j B_j O_i^\alpha d_{ij}^{-\beta}
 
 \vspace{5mm} %5mm vertical space
 \textbf{- Doubly Constrained Model}
- In the doubly constrained model is only considered the flows. However, first,t it is crucial to detect a good beta. Thus, the beta is used to calculate the new origin and destination flows. Beta values do not change unless the mode of transport changes. 
+ In the doubly constrained model only considered the flows and the distance, in addition, to understanding the origin and destination in the same equation. First, it is crucial to detect a reasonable value of beta. Thus, the beta is used to calculate the new origin and destination flows. Beta values do not change unless the mode of transport changes. 
 
 \begin{equation} \tag{4}
 T_{ij} = A_i B_j O_i D_j d_{ij}^{-\beta}
 \end{equation}
 
-\vspace{5mm} %5mm vertical space
+\newpage 
 
-Thus, the Production-constrained model was selected to analyse London's tube network. 
+Thus, the Production-constrained model was selected to analyse London's tube network. In order to determine the most suitable model, both the attraction-constrained and production-constrained models were tested to address the specific scenarios involving a 50\% reduction in jobs in Canary Wharf and an increase in transportation costs. While the attraction-constrained model is primarily concerned with the demand generation for a destination like work in Canary Wharf, it was found that the production-constrained model produced a higher R-squared value and could be validated for both scenarios(Figure \ref{fig: Model before calibration}, Figure\ref{fig: Model after calibration}, and Table \ref{table: calibration}).
+
+In the context of the Production-constrained model, even though it is primarily associated with the origin of flows, such as the tube stations, the reduction in job opportunities in Canary Wharf necessitates the redistribution of flows from these areas to other city regions. Therefore, this model becomes essential for understanding the new dynamics of flow origins and reallocating attraction flows towards available job opportunities.
 
     \begin{figure}[htp]
         \centering
@@ -321,12 +323,26 @@ In order to build the Production-constrained model, the following variables were
         \label{fig: Model after calibration}
     \end{figure}
 
+\vspace{5mm} %5mm vertical space
+
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{@{}ll@{}}
+    \toprule
+    \textbf{Measure} & \textbf{Value} \\ \midrule
+    R-squared        & 0.38           \\
+    RMSE             & 102.82     
+    \end{tabular}
+    \caption{Model after calibration}
+    \label{table: calibration}
+    \end{table}
+
 \newpage    
 
 \subsection{Scenarios}
 \subsubsection{Scenario A}
 
-Assuming the Canary Wharf decreased in 50\% the total number of jobs, the flows were recalculated, reducing from 58,772 to 29,386. Thus, a new value for gamma and beta was calculated and then generated Ai value. As a result, the total number of flows only had a small variation. Furthermore, it is possible to detect that there was a rebalancing of the flows in which the source flows increased from 572 to 601 while the destination flows increased from 445 to 470.
+Assuming the Canary Wharf decreased in 50\% the total number of jobs, the flows were recalculated, reducing from 58,772 to 29,386. Thus, a new value for gamma and beta was calculated and then generated Ai value. As a result, the total number of flows only had a small variation. Furthermore, it is possible to detect that there was a rebalancing of the flows in which the source flows increased from 572 to 601 while the destination flows increased from 445 to 470(Figure \ref{fig:Part2_OD4_scenario A}).
 
     \begin{figure}[htp]
         \centering
@@ -334,14 +350,13 @@ Assuming the Canary Wharf decreased in 50\% the total number of jobs, the flows 
         \caption{Scenario A}
         \label{fig:Part2_OD4_scenario A}
     \end{figure}
-
-\newpage    
+  
 
 \subsubsection{Scenario B}
 
 \textbf{Measure 1}
 
-Assuming an increase in cost, which in this model refers to distance, two scenarios were simulated. The first scenario involved a 30\% increase, while the second involved a 50\% increase. Simulations were also conducted with a 10\% increase, but there were limitations in validating the results. Therefore, more significant increases were chosen to evaluate the system's behaviour. In the simulation assuming a 30\% increase in cost, an equilibrium was achieved in the estimated flows of origin and destination, with flow values around 600, without impacting the total number of flows.
+Assuming an increase in cost, which in this model refers to distance, two scenarios were simulated. The first scenario involved a 30\% increase, while the second involved a 50\% increase. Simulations were also conducted with a 10\% increase, but there were limitations in validating the results. Therefore, more significant increases were chosen to evaluate the system's behaviour. In the simulation assuming a 30\% increase in cost, an equilibrium was achieved in the estimated flows of origin and destination, with flow values around 600, without impacting the total number of flows(Figure \ref{fig:Part2_OD6_scenario B}).
 
     \begin{figure}[htp]
         \centering
@@ -352,7 +367,7 @@ Assuming an increase in cost, which in this model refers to distance, two scenar
 
 \textbf{Measure 2}    
 
-
+The second measure produced more notable outcomes, revealing a discernible impact on the origin and destination flows. Specifically, when transport costs were increased by 50\%, resulting in longer distances for commuting to work in the city, the origin flows increased to 746 while the destination flows remained nearly unchanged. As a result, many users discontinued their use of the system due to a 50\% increase in travel costs(Figure \ref{fig:Part2_OD8_scenario B}).
     \begin{figure}[htp]
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD8_scenario B.png}
@@ -360,9 +375,7 @@ Assuming an increase in cost, which in this model refers to distance, two scenar
         \label{fig:Part2_OD8_scenario B}
     \end{figure}
 
-\newpage    
-
-\subsubsection{Discussion}
+Thus, scenario B presented the most significant flow change, especially when applying a 50\% cost increase in the model.
 
 
 
