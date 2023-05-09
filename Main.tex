@@ -215,36 +215,48 @@ The weighted network outcomes performed a different ranking behaviour, mainly fo
 
 For this analysis, it will remain the number of component and size largest components, in addition to the Flows of the largest component. Aiming to understand the impact in the flows, removing a tube station. 
 
+\newpage 
+
 \subsubsection{Node Removal} 
+
+The Degree centrality ranking, the measure number of components and the size largest component did not have different values. However, the flows of the largest component presented crucial information about the importance of removed stations in the networking flows(Figure \ref{fig:Table_Flows_degree}). 
 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Table_Flows_degree.png}
-        \caption{Flows - Centrality measures}
+        \caption{Weighted Network - Degree Centrality}
         \label{fig:Table_Flows_degree}
     \end{figure}
+
+For eigenvector centrality, Stratford station caused one of the highest impacts on the flow in the network, removing a considerable amount of flow in addition to separating the network into three components( Figure \ref{fig:Table_Flows_eigenvector}).
 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Table_Flows_eigenvector.png}
-        \caption{Flows - Centrality measures}
+        \caption{Weighted Network - Eigenvector Centrality}
         \label{fig:Table_Flows_eigenvector}
     \end{figure}
 
-
+On the other hand, Betweenness Centrality showed a different outcome(Figure \ref{fig:Table_Flows_Betweenness}). 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Table_Flows_Betweenness.png}
-        \caption{Flows - Centrality measures}
+        \caption{Weighted Network - Betweenness Centrality}
         \label{fig:Table_Flows_Betweenness}
     \end{figure}
 
-\newpage
+Overall, 
+
+\newpage 
 
 \section{ Part 2: Spatial Interaction models}
 
-
 \subsection{Models and calibration}
+
+
+
+
+
 
 
 
@@ -266,7 +278,7 @@ For this analysis, it will remain the number of component and size largest compo
         \label{fig:Part2_OD2}
     \end{figure}
 
-\newpage    
+   
 \subsection{Scenarios}
 \subsubsection{Scenario A}
 
