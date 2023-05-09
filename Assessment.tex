@@ -96,7 +96,7 @@
     {\LARGE\textbf{Assessment\\
     % Subtitle
     CASA0002 – Urban Simulation\\}}
-SN21125032 | Word count: 
+SN21125032 
 
 \vspace{5mm} %5mm vertical space
   
@@ -112,11 +112,11 @@ SN21125032 | Word count:
         
         \textbf{Degree Centrality:} 
         
-The number of links associated with a node related to the tube network(Figure \ref{fig:Part1_topologicalmap_degree}). This centrality reflects the number of connections with a station, which can be linked with another station or tube line that starts and finish in the same station, as a loop, for example \cite{arcaute_review_2022}. Regarding this analysis, the degree centrality values are normalised by dividing them by the maximum possible degree, which is n-1. For this analysis, degree centrality can detect a vulnerability of a station, mainly those with a high degree, because removing it can interrupt the commute to an important location through the city.  In the map below( Figure \ref{fig:Part1_topologicalmap_degree}), the stations with high degrees are predominantly located in central London in the north and east region of the city.
+The number of links associated with a node related to the tube network(Figure \ref{fig:Part1_topologicalmap_degree}). This centrality reflects the number of connections with a station, which can be linked with another station or tube line that starts and finish in the same station, as a loop, for example (\cite{arcaute_review_2022}). Regarding this analysis, the degree centrality values are normalised by dividing them by the maximum possible degree, which is n-1. For this analysis, degree centrality can detect a vulnerability of a station, mainly those with a high degree, because removing it can interrupt the commute to an important location through the city.  In the map below( Figure \ref{fig:Part1_topologicalmap_degree}), the stations with high degrees are predominantly located in central London in the north and east region of the city.
 
     \begin{figure}[htp]
         \centering
-        \includegraphics[width=12cm]{Image/Part1_topologicalmap_degree.png}
+        \includegraphics[width=10cm]{Image/Part1_topologicalmap_degree.png}
         \caption{Topological Tube network map - Degree centrality}
         \label{fig:Part1_topologicalmap_degree}
     \end{figure}   
@@ -125,15 +125,13 @@ The number of links associated with a node related to the tube network(Figure \r
         
 \newpage  
         
-        \textbf{Eigenvector centrality:}  The transitive influence of nodes(Figure \ref{fig:Part1_topologicalmap_eigenvector}). Eigenvector centrality measures the influence of a node in a network based on a relative score for all nodes. Thus, nodes with a high-score mean that these nodes are also connected to other nodes with a high score\cite{networkx_centrality_2023}. For tube network, these measure is useful because it is possible to understand the influence of a tube station not only focused on its good connectivity with a  range of tube lines. This centrality allows us to understand how good is the connectivity of the neighbour's stations. Therefore, when it is considered a station disruption, a user who is close to other tube stations that are also well connected to the system allows that user to access the transport system without adding large displacements.
+        \textbf{Eigenvector centrality:}  The transitive influence of nodes(Figure \ref{fig:Part1_topologicalmap_eigenvector}). Eigenvector centrality measures the influence of a node in a network based on a relative score for all nodes. Thus, nodes with a high-score mean that these nodes are also connected to other nodes with a high score(\cite{networkx_centrality_2023}). For tube network, these measure is useful because it is possible to understand the influence of a tube station not only focused on its good connectivity with a  range of tube lines. This centrality allows us to understand how good is the connectivity of the neighbour's stations. Therefore, when it is considered a station disruption, a user who is close to other tube stations that are also well connected to the system allows that user to access the transport system without adding large displacements.
 
     \vspace{5mm} %5mm vertical space    
         
     \begin{figure}[htp]
         \centering
         \includegraphics[width=5cm]{Image/eigenvector equation.jpeg}
-        \caption{Eigenvector centrality - Equation}
-        \label{fig:eigenvector equation}
     \end{figure} 
 
         
@@ -146,7 +144,7 @@ The number of links associated with a node related to the tube network(Figure \r
 
   
 \newpage   
-        \textbf{Betweenness centrality:} The shortest path passing through a node( Figure \ref{fig:Part1_topologicalmap_betweenness}). It is possible to detect the level of influence a node has on the flow of information\cite{arcaute_review_2022}. Thus, it can find the nodes that serve as bridges for a different part of the network. Related to the tube network, this measure is an essential outcome for understanding which tube station has the characteristic to allow users to commute easily and fast into the system.
+        \textbf{Betweenness centrality:} The shortest path passing through a node( Figure \ref{fig:Part1_topologicalmap_betweenness}). It is possible to detect the level of influence a node has on the flow of information(\cite{arcaute_review_2022}). Thus, it can find the nodes that serve as bridges for a different part of the network. Related to the tube network, this measure is an essential outcome for understanding which tube station has the characteristic to allow users to commute easily and fast into the system.
         
         To calculate the betweenness centrality of a node is the sum of all shortest paths that pass through the vertex, where 
                     
@@ -175,7 +173,11 @@ The number of links associated with a node related to the tube network(Figure \r
 
 \subsubsection{Impact Measures} 
 
-In order to evaluate the topological network and use this measure to evaluate the removal of stations, this analysis uses the Size Largest Component and the Number of Components. The current network has only 1 component. However, when the stations start to be removed, some links will be disconnected, and the number of components will increase. Thus, it is crucial to choose measures that can detect the impact of removing that station, considering the rearrangement of the topological network. 
+
+
+In order to analyze the impact on the entire network and observe its behaviour when nodes are removed, two measures were selected to evaluate the network components. However, a review conducted by \cite{jamakovic_relationships_2008} found that most topological measures discussed only focus on the largest components. In this study, the analysis specifically considers measures such as distance and clustering to better understand the network's dynamics and characteristics.
+
+Thus,  this analysis uses the Size Largest Component and the Number of Components. The current network has only 1 component. However, when the stations start to be removed, some links will be disconnected, and the number of components will increase. Therefore, it is crucial to choose measures that can detect the impact of removing that station, considering the rearrangement of the topological network. 
 
 \subsubsection{Node Removal} 
 
@@ -199,13 +201,11 @@ For the sequential removal nodes( Figure \ref{fig:Part1_sequential_Summarise}), 
     \end{figure}
 
 
-\newpage
-
 \subsection{Flows: weighted network} 
 
 \subsubsection{Centrality Measures } 
 
-The weighted network outcomes performed a different ranking behaviour, mainly for the betweenness centrality. \textit{West Hampstead}, \textit{Gospel Oak} and \textit{Finchley Road \& Frognal} are stations that were not present in the topological network ranking( Figure \ref{fig:Table_CentralitiesMeasures_Flows}). 
+The weighted network outcomes performed a different ranking behaviour, mainly for the betweenness centrality. \textit{West Hampstead}, \textit{Gospel Oak} and \textit{Finchley Road \& Frognal} are stations that were not present in the topological network ranking( Figure \ref{fig:Table_CentralitiesMeasures_Flows}). This situation occurred because the only centrality measure considering the flows in its equation was betweenness centrality. As a result, other stations exhibited greater importance when exclusively considering this centrality measure. However, it is crucial to determine whether the removal of nodes will also significantly impact these newly identified stations within the network.
 
     \begin{figure}[htp]
         \centering
@@ -264,7 +264,7 @@ Gravity Model( Unconstrained model), and the constrained models( Production-cons
 \vspace{5mm} %5mm vertical space
 
 \textbf{- Gravity model:}
-The gravity model assumes the flows between the origin and destination are proportional to the mass of the origin and destination and inversely proportional to the distance between them. That means if the distance decreases, the flow increase and if the flows decrease, the origin and destination mass decrease\cite{wilson_family_1971, senior_gravity_1979}.
+The gravity model assumes the flows between the origin and destination are proportional to the mass of the origin and destination and inversely proportional to the distance between them. That means if the distance decreases, the flow increase and if the flows decrease, the origin and destination mass decrease(\cite{wilson_family_1971, senior_gravity_1979}).
 
 \begin{equation} \tag{1}
 T_{ij} = k O_i^\alpha  D_j^\gamma  d_{ij}^{-\beta}
@@ -278,7 +278,7 @@ In unconstrained models, the constant K is employed to ensure the inclusion of a
 
 \textbf{- Production-Constrained Model:}
 
-The Production(origin) Constrained Spatial Interaction Model is a powerful framework for understanding how origins behave and commute within a city to reach points of interest. These estimated flows can be connected to different variables related to these attractive points, such as budget and store size. In the context of London's tube network, the flows can be estimated using the equation below, which incorporates the logarithm of job values and the distance(cost)\cite{pooler_extended_1994}.
+The Production(origin) Constrained Spatial Interaction Model is a powerful framework for understanding how origins behave and commute within a city to reach points of interest. These estimated flows can be connected to different variables related to these attractive points, such as budget and store size. In the context of London's tube network, the flows can be estimated using the equation below, which incorporates the logarithm of job values and the distance(cost)(\cite{pooler_extended_1994}).
 
 \begin{equation} \label{eq:1} \tag{2}
 T_{ij} = A_i O_i D_j^\gamma d_{ij}^{-\beta}
@@ -288,7 +288,7 @@ T_{ij} = A_i O_i D_j^\gamma d_{ij}^{-\beta}
 
 \textbf{- Attraction-Constrained Model}
 
-The Attraction(destination) Constrained model plays a crucial role in assessing the impact of a significant increase in demand within a specific region, such as establishing a new university or creating many job opportunities. By applying the value of this increase to the model, we can estimate how this new pattern will affect commuting flows and gain insights into the origins of these flows towards the destination. When applied to the tube network, the model considers the logarithm values of population, distance (cost), and destination stations,  resulting and the relationship of all these values with the flows in the system\cite{pooler_extended_1994}.
+The Attraction(destination) Constrained model plays a crucial role in assessing the impact of a significant increase in demand within a specific region, such as establishing a new university or creating many job opportunities. By applying the value of this increase to the model, we can estimate how this new pattern will affect commuting flows and gain insights into the origins of these flows towards the destination. When applied to the tube network, the model considers the logarithm values of population, distance (cost), and destination stations,  resulting and the relationship of all these values with the flows in the system(\cite{pooler_extended_1994}).
 
 
 \begin{equation} \label{eq:5} \tag{3}
@@ -305,9 +305,9 @@ T_{ij} = A_i B_j O_i D_j d_{ij}^{-\beta}
 
 \newpage 
 
-Thus, the Production-constrained model was selected to analyse London's tube network. In order to determine the most suitable model, both the attraction-constrained and production-constrained models were tested to address the specific scenarios involving a 50\% reduction in jobs in Canary Wharf and an increase in transportation costs\cite{flowerdew_fitting_2010}. While the attraction-constrained model is primarily concerned with the demand generation for a destination like work in Canary Wharf, it was found that the production-constrained model produced a higher R-squared value and could be validated for both scenarios(Figure \ref{fig: Model before calibration}, Figure\ref{fig: Model after calibration}, and Table \ref{table: calibration}).
+Thus, the Production-constrained model was selected to analyse London's tube network. In order to determine the most suitable model, both the attraction-constrained and production-constrained models were tested to address the specific scenarios involving a 50\% reduction in jobs in Canary Wharf and an increase in transportation costs(\cite{flowerdew_fitting_2010}). While the attraction-constrained model is primarily concerned with the demand generation for a destination like work in Canary Wharf, it was found that the production-constrained model produced a higher R-squared value and could be validated for both scenarios(Figure \ref{fig: Model before calibration}, Figure\ref{fig: Model after calibration}, and Table \ref{table: calibration}).
 
-In the context of the Production-constrained model\cite{pooler_extended_1994}, even though it is primarily associated with the origin of flows, such as the tube stations, the reduction in job opportunities in Canary Wharf necessitates the redistribution of flows from these areas to other city regions. Therefore, this model becomes essential for understanding the new dynamics of flow origins and reallocating attraction flows towards available job opportunities.
+In the context of the Production-constrained model(\cite{pooler_extended_1994}), even though it is primarily associated with the origin of flows, such as the tube stations, the reduction in job opportunities in Canary Wharf necessitates the redistribution of flows from these areas to other city regions. Therefore, this model becomes essential for understanding the new dynamics of flow origins and reallocating attraction flows towards available job opportunities.
 
     \begin{figure}[htp]
         \centering
@@ -316,7 +316,7 @@ In the context of the Production-constrained model\cite{pooler_extended_1994}, e
         \label{fig: Model before calibration}
     \end{figure}
 
-In order to build the Production-constrained model, the following variables were applied in the equation: Flows, Jobs, Population and Distance as the cost\cite{neira_working_2022}. 
+In order to build the Production-constrained model, the following variables were applied in the equation: Flows, Jobs, Population and Distance as the cost(\cite{neira_working_2022}). 
 
     \begin{figure}[htp]
         \centering
@@ -363,21 +363,23 @@ Assuming an increase in cost, which in this model refers to distance, two scenar
     \begin{figure}[htp]
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD6_scenario B.png}
-        \caption{Measure 1 - Reducing 30\%}
+        \caption{Measure 1 - Increasing 30\%}
         \label{fig:Part2_OD6_scenario B}
     \end{figure}
 
+\newpage  
+
 \textbf{Measure 2}    
 
-The second measure produced more notable outcomes, revealing a discernible impact on the origin and destination flows. Specifically, when transport costs were increased by 50\%, resulting in longer distances for commuting to work in the city, the origin flows increased to 746 while the destination flows remained nearly unchanged. As a result, many users discontinued their use of the system due to a 50\% increase in travel costs(Figure \ref{fig:Part2_OD8_scenario B}).
+The second measure produced more notable outcomes, revealing a discernible impact on the origin and destination flows. Specifically, when transport costs were increased by 50\%, resulting in longer distances for commuting to work in the city, the origin flows increased to 746 while the destination flows remained nearly unchanged. As a result, many users discontinued their use of the system due to a 50\% increase in travel costs(Figure \ref{fig:Part2_OD8_scenario B}). Thus, scenario B presented the most significant flow change, especially when applying a 50\% cost increase in the model.
     \begin{figure}[htp]
         \centering
         \includegraphics[width=16cm]{Image/Part2_OD8_scenario B.png}
-        \caption{Measure 1 - Reducing 50\%}
+        \caption{Measure 1 - Increasing 50\%}
         \label{fig:Part2_OD8_scenario B}
     \end{figure}
 
-Thus, scenario B presented the most significant flow change, especially when applying a 50\% cost increase in the model.
+
 
 
 
@@ -396,6 +398,9 @@ Thus, scenario B presented the most significant flow change, especially when app
 \printbibliography[title = {References}]
 \addcontentsline{toc}{chapter}{References} % Adds References Section to Table of Contents
 
+\vspace{5mm} %5mm vertical space
+
+To access GitHub Repository \href{https://github.com/brfelipealmeida/LondonTubeNetwork}{Link}
 
 \end{document}
 %  -------------------------------------------------
