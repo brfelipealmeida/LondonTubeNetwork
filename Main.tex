@@ -108,7 +108,7 @@
         
         \vspace{5mm} %5mm vertical space
         
-        \textbf{Degree Centrality:} The number of links associated with a node related to the tube network. This centrality reflects the number of connections with a station, which can be linked with another station or tube line that starts and finish in the same station, as a loop, for example. Regarding this analysis, the degree centrality values are normalised by dividing them by the maximum possible degree, which is n-1. 
+        \textbf{Degree Centrality:} The number of links associated with a node related to the tube network(Figure \ref{fig:Part1_topologicalmap_degree}). This centrality reflects the number of connections with a station, which can be linked with another station or tube line that starts and finish in the same station, as a loop, for example. Regarding this analysis, the degree centrality values are normalised by dividing them by the maximum possible degree, which is n-1. 
 
     \begin{figure}[htp]
         \centering
@@ -121,7 +121,7 @@
         
 \newpage  
         
-        \textbf{Eigenvector centrality:}  The transitive influence of nodes. Eigenvector centrality measures the influence of a node in a network based on a relative score for all nodes. Thus, nodes with a high-score mean that these nodes are also connected to other nodes with a high score. For tube network, these measure is useful because it is possible to understand the influence of a tube station not only focused on its good connectivity with a  range of tube lines. This centrality allows us to understand how good is the connectivity of the neighbour's stations. Therefore, when it is considered a station disruption, an individual close to other stations is well-connected to improve the user experience in the system. 
+        \textbf{Eigenvector centrality:}  The transitive influence of nodes(Figure \ref{fig:Part1_topologicalmap_eigenvector}). Eigenvector centrality measures the influence of a node in a network based on a relative score for all nodes. Thus, nodes with a high-score mean that these nodes are also connected to other nodes with a high score. For tube network, these measure is useful because it is possible to understand the influence of a tube station not only focused on its good connectivity with a  range of tube lines. This centrality allows us to understand how good is the connectivity of the neighbour's stations. Therefore, when it is considered a station disruption, an individual close to other stations is well-connected to improve the user experience in the system. 
 
     \vspace{5mm} %5mm vertical space    
         
@@ -142,7 +142,12 @@
 
   
 \newpage   
-        \textbf{Betweenness centrality:} the shortest path passing through a node.
+        \textbf{Betweenness centrality:} The shortest path passing through a node( Figure \ref{fig:Part1_topologicalmap_betweenness}). It is possible to detect the level of influence a node has on the flow of information. Thus, it can find the nodes that bridge a different part of the network. Related to the tube network, this measure is an essential outcome for understanding which tube station has the characteristic to allow users to commute easily and fast into the system.
+        
+        To calculate the betweenness centrality of a node is the sum of all shortest paths that pass through the vertex, where 
+                    
+
+\begin{equation}x_{i}=\sum_{st} \frac {n^{i}_{st}}{g_{st}}\end{equation}
         
     \begin{figure}[htp]
         \centering
@@ -153,7 +158,7 @@
 
   \vspace{5mm} %5mm vertical space
 
-    To summarise,     
+    To summarise( Figura \ref{fig:Table_CentralitiesMeasures}), Stratford is the station with the highest degree and betweenness topological centrality in London's Tube Network, while Bank and Monument is the node with the highest eigenvector centrality. Overall, Stratford, Bank and Monument and Liverpool Street represent a significant position in the three rankings, showing a concentration of important nodes in London's central/east region. All the values are normalised to allow a comparison among measures.  
 
     \begin{figure}[htp]
         \centering
@@ -166,7 +171,7 @@
 
 \subsubsection{Impact Measures} 
 
-In order to evaluate the topological network and use this measure to evaluate the removal of stations, this analysis uses [measure 1] and [measure 2]. The current network has only 1 component. However, when the stations start to be removed, some links will be disconnected, and the number of components will increase. Thus, it is crucial to choose measures that can detect the impact of removing that station, considering the rearrangement of the topological network. 
+In order to evaluate the topological network and use this measure to evaluate the removal of stations, this analysis uses the Size Largest Component and the Number of Components. The current network has only 1 component. However, when the stations start to be removed, some links will be disconnected, and the number of components will increase. Thus, it is crucial to choose measures that can detect the impact of removing that station, considering the rearrangement of the topological network. 
 
 \subsubsection{Node Removal} 
 
@@ -180,6 +185,7 @@ In order to measure the impact of nodes removal in sequential and non-sequential
         \label{fig:Part1_nonsequential_Summarise}
     \end{figure}
 
+For the sequential removal nodes( Figure \ref{fig:Part1_sequential_Summarise}),  betweenness centrality had a sharp drop in the sizer of the largest component after removing the 6th node in the system( Green Park). The largest component's size variation remained around the initial value in the other centralities without drastic drops or increases. 
 
     \begin{figure}[htp]
         \centering
@@ -195,6 +201,8 @@ In order to measure the impact of nodes removal in sequential and non-sequential
 
 \subsubsection{Centrality Measures } 
 
+The weighted network outcomes performed a different ranking behaviour, mainly for the betweenness centrality. \textit{West Hampstead}, \textit{Gospel Oak} and \textit{Finchley Road \& Frognal} are stations that were not present in the topological network ranking( Figure \ref{fig:Table_CentralitiesMeasures_Flows}). 
+
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Table_CentralitiesMeasures_Flows.png}
@@ -204,7 +212,8 @@ In order to measure the impact of nodes removal in sequential and non-sequential
 
 
 \subsubsection{Impact Measures} 
-lorem
+
+For this analysis, it will remain the number of component and size largest components, in addition to the Flows of the largest component. Aiming to understand the impact in the flows, removing a tube station. 
 
 \subsubsection{Node Removal} 
 
