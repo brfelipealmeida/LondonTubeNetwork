@@ -96,8 +96,10 @@
     {\LARGE\textbf{Assessment\\
     % Subtitle
     CASA0002 – Urban Simulation\\}}
-    
+SN21125032 | Word count: 
 
+\vspace{5mm} %5mm vertical space
+  
 \section{Part 1: London’s underground resilience}
 
 
@@ -258,11 +260,15 @@ Gravity Model( Unconstrained model), and the constrained models( Production-cons
 \vspace{5mm} %5mm vertical space
 
 \textbf{- Gravity model:}
-The gravity model assume the flows between the origin and destination are proportional to the mass of the origin and destination and inversely proportional to the distance between them. That means if distance decreases, the flow increase and if flows decrease, the origin and destination mass decrease.
+The gravity model assumes the flows between the origin and destination are proportional to the mass of the origin and destination and inversely proportional to the distance between them. That means if the distance decreases, the flow increase and if the flows decrease, the origin and destination mass decrease.
 
 \begin{equation} \tag{1}
 T_{ij} = k O_i^\alpha  D_j^\gamma  d_{ij}^{-\beta}
 \end{equation}
+
+\vspace{5mm} %5mm vertical space
+
+In unconstrained models, the constant K is employed to ensure the inclusion of all values. However, in constrained models, we can add the sums of origin and destination separately, providing greater flexibility to test the model in more specific scenarios. This allows for a more nuanced evaluation of the model's performance.
 
 \vspace{5mm} %5mm vertical space
 
@@ -316,13 +322,6 @@ In order to build the Production-constrained model, the following variables were
 
     \begin{figure}[htp]
         \centering
-        \includegraphics[width=16cm]{Image/Part2_OD3_scenario A.png}
-        \caption{Table}
-        \label{fig:Part2_OD3_scenario A}
-    \end{figure}
-
-    \begin{figure}[htp]
-        \centering
         \includegraphics[width=16cm]{Image/Part2_OD4_scenario A.png}
         \caption{Table}
         \label{fig:Part2_OD4_scenario A}
@@ -333,12 +332,6 @@ In order to build the Production-constrained model, the following variables were
 \subsubsection{Scenario B}
 
 \textbf{Measure 1}
-    \begin{figure}[htp]
-        \centering
-        \includegraphics[width=16cm]{Image/Part2_OD5_scenario B.png}
-        \caption{Table}
-        \label{fig:Part2_OD5_scenario B}
-    \end{figure}
 
     \begin{figure}[htp]
         \centering
@@ -348,12 +341,7 @@ In order to build the Production-constrained model, the following variables were
     \end{figure}
 
 \textbf{Measure 2}    
-    \begin{figure}[htp]
-        \centering
-        \includegraphics[width=16cm]{Image/Part2_OD7_scenario B.png}
-        \caption{Table}
-        \label{fig:Part2_OD7_scenario B}
-    \end{figure}
+
 
     \begin{figure}[htp]
         \centering
