@@ -239,7 +239,9 @@ For eigenvector centrality, Stratford station caused one of the highest impacts 
         \label{fig:Table_Flows_eigenvector}
     \end{figure}
 
-On the other hand, Betweenness Centrality showed a different outcome(Figure \ref{fig:Table_Flows_Betweenness}). 
+Although the betweenness centrality measure for Tube networking includes stations that differ from other centrality measures, removing these stations does not significantly impact the flow of network traffic or the size of the largest component. Consequently, when evaluating the resilience of the tube system by incorporating flows, betweenness centrality may not be a suitable centrality measure.
+
+(Figure \ref{fig:Table_Flows_Betweenness}). 
     \begin{figure}[htp]
         \centering
         \includegraphics[width=14cm]{Image/Table_Flows_Betweenness.png}
@@ -247,7 +249,7 @@ On the other hand, Betweenness Centrality showed a different outcome(Figure \ref
         \label{fig:Table_Flows_Betweenness}
     \end{figure}
 
-Overall, 
+Considering the significant impact observed with degree centrality and eigenvector centrality, it becomes apparent that Stratford, Bank and Monument, Liverpool Street, and King's Cross stations play crucial roles in facilitating user flows within the system during the specified period. Conversely, the size of the largest component and the number of components did not prove to be relevant measures for evaluating the flows in the system. However, these measures are still valuable for assessing the behaviour of other metrics, such as the flows within the largest component.
 
 \newpage 
 
@@ -274,7 +276,7 @@ In unconstrained models, the constant K is employed to ensure the inclusion of a
 
 \textbf{- Production-Constrained Model:}
 
-
+The Production(origin) Constrained Spatial Interaction Model is a powerful framework for understanding how origins behave and commute within a city to reach points of interest. These estimated flows can be connected to different variables related to these attractive points, such as budget and store size. In the context of London's tube network, the flows can be estimated using the equation below, which incorporates the logarithm of job values and the distance(cost).
 
 \begin{equation} \label{eq:1} \tag{2}
 T_{ij} = A_i O_i D_j^\gamma d_{ij}^{-\beta}
@@ -283,6 +285,9 @@ T_{ij} = A_i O_i D_j^\gamma d_{ij}^{-\beta}
 \vspace{5mm} %5mm vertical space
 
 \textbf{- Attraction-Constrained Model}
+
+The Attraction(destination) Constrained model plays a crucial role in assessing the impact of a significant increase in demand within a specific region, such as establishing a new university or creating many job opportunities. By applying the value of this increase to the model, we can estimate how this new pattern will affect commuting flows and gain insights into the origins of these flows towards the destination. When applied to the tube network, the model considers the logarithm values of population, distance (cost), and destination stations,  resulting and the relationship of all these values with the flows in the system.
+
 
 \begin{equation} \label{eq:5} \tag{3}
 T_ij = D_j B_j O_i^\alpha d_{ij}^{-\beta}
